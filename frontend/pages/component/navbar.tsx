@@ -1,3 +1,4 @@
+//https://dev.to/unshift/how-you-can-create-a-sidebar-like-the-dailydev-extension-fron-scratch-using-react-and-tailwindcss-in-5-steps-nk7
 import Head from 'next/head'
 import {
   BsPlus,
