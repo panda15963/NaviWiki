@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "InkLipquid";
+    font-weight: 200;
+    src: url("/fonts/Playfair_Italic_VariableFont") format("truetype");
+  }

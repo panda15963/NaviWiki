@@ -7,9 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        "dark-purple":"#081A51",
-        "light-purple":"rgba(255,255,255,0.18)",        
+      gridTemplateColumns: {
+        sidebar: "300px auto", // 👈 for sidebar layout. adds grid-cols-sidebar class
+      }, 
+      gridTemplateRows: {
+        header: "64px auto", // 👈 for the navbar layout. adds grid-rows-header class
       }
     },
   },
