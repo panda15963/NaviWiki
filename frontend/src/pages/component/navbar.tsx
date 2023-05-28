@@ -1,6 +1,11 @@
+import { useState } from "react";
 import Link from "next/link";
-import { BsArrowLeftShort, BsWikipedia, BsDownload, BsFillHouseFill, BsMicrosoftTeams } from "react-icons/bs";
-import { GiPlatform } from "react-icons/gi";
+import { BsArrowLeftShort, BsWikipedia, BsDownload, BsFillHouseFill, BsListUl } from "react-icons/bs";
+import { BiNavigation } from "react-icons/bi";
+import { RiNavigationLine } from "react-icons/ri";
+import { FiNavigation2, FiLogIn } from "react-icons/fi";
+import { TbNavigation } from "react-icons/tb";
+import { VscSignIn } from "react-icons/vsc";
 export function Navbar() {
     const logoFont = {
         FontFace: {
@@ -9,50 +14,68 @@ export function Navbar() {
             src: "url(/fonts/Playfair_Italic_VariableFont) format(truetype)",
         }
     }
-    const Menus = [
-        { icon: <BsFillHouseFill className="text-2xl" />, title: "Home", link: <Link href="/"></Link> },
-        { 
-            icon: <GiPlatform className="text-2xl" />, 
-            title: "Platforms", 
-            submenu: true,
-            submenuItems: [
-                { icon: <BsWikipedia className="text-2xl" />, title: "STD5", link: <Link href="/std5"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "STD5W", link: <Link href="/std5w"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "PRM5", link: <Link href="/prm5"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "PRM6", link: <Link href="/prm6"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "CCIC", link: <Link href="/ccic"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "CCIC27", link: <Link href="/ccuc27"></Link> },
-                { icon: <BsWikipedia className="text-2xl" />, title: "ccNC", link: <Link href="/ccnc"></Link> },
+    type Menus = {
+        name?: string,
+        items?: {
+            icon?: any,
+            title?: string,
+            link?: any
+        }[]
+    }
+    const data: Menus[] = [
+        {
+            name: "General",
+            items: [
+                { icon: BsFillHouseFill, link: <Link href="/">Home</Link> },
+                { icon: FiLogIn, link: <Link href="/login">Login</Link> },
+                { icon: VscSignIn, link: <Link href="/register">Register</Link> },
+                { icon: BsDownload, link: <Link href="/download">Download</Link> },
             ]
         },
-        { icon: <BsDownload className="text-2xl" />, title: "Download", link: <Link href="/download"></Link> },
-        { icon: <BsMicrosoftTeams className="text-2xl" />, title: "About", link: <Link href="/about"></Link> }, 
+        {
+            name: "Platforms",
+            items: [
+                { icon: BiNavigation, link: <Link href="/platform/std5">STD5</Link> },
+                { icon: BiNavigation, link: <Link href="/platform/std5w">STD5W</Link> },
+                { icon: RiNavigationLine, link: <Link href="/platform/prm5">PRM5</Link> },
+                { icon: RiNavigationLine, link: <Link href="/platform/prm6">PRM6</Link> },
+                { icon: FiNavigation2, link: <Link href="/platform/ccic">CCIC</Link> },
+                { icon: FiNavigation2, link: <Link href="/platform/ccic27">CCIC27</Link> },
+                { icon: TbNavigation, link: <Link href="/platform/ccnc">ccNC</Link> },
+            ]
+        },
     ]
+    const [open, setOpen] = useState(true);
+    const toggleMenu = {
+        open: () => setOpen(!open),
+    }
     return (
         <>
             <div className="flex">
-                <div className={"bg-gray-800 h-screen p-5 pt-5"}>
-                    <BsArrowLeftShort className="bg-white text-gray text-2xl rounded-full absolute -right-3 top-9 border border-gray cursor-pointer" />
-                    <div className="inline-flex">
-                        <BsWikipedia className="text-4xl cursor-pointer block float-left mr-2" />
-                        <h1 className="text-white origin-left font-medium text-2xl" style={logoFont.FontFace}>
-                            <Link href="/">ModiM Wiki</Link>
-                        </h1>
-                    </div>
-                    <ul className="pt-2">
-                        {Menus.map((menu) => (
-                            <>
-                                <li className="text-gray-300 text-sm font-medium py-2 flex items-center gap-x-4 cursor-pointer hover:bg-gray-700 rounded-md" key="{menu}">
-                                    <span className="inline-flex items-center px-2">
-                                        {menu.icon}
-                                        <span className="ml-4 text-base font-medim flex-1" style={logoFont.FontFace}>{menu.title}</span>
-                                    </span>
-                                </li>
-                            </>
+                <div className={`bg-gray-800 h-screen p-5 pt-5 ${open ? "w-72" : "w-20 "} relative duration`}>
+                    <BsArrowLeftShort className={`bg-white text-gray text-2xl rounded-full absolute -right-3 top-9 border border-gray cursor-pointer ${!open && "rotate-180"}`} onClick={toggleMenu.open} />
+                    <BsWikipedia className="text-4xl cursor-pointer block float-left mr-2" />
+                    <h1 className={`text-white origin-left font-medium text-2xl ${!open && "hidden"}`} style={logoFont.FontFace}>
+                        <Link href="/">ModiM Wiki</Link>
+                    </h1>
+                    <div className="grow">
+                        {data.map((group, index) => (
+                            <div key={index} className="my-12" >
+                                <BsListUl className="text-3xl float-left mr-2 mx-1 cursor-pointer text-gray-500" />
+                                <div className={`mb-2 ml-4 font-bold text-xl text-gray-500 ${!open && "hidden"}`} style={logoFont.FontFace}>
+                                    {group.name}
+                                </div>
+                                {group.items?.map((item, index) => (
+                                    <div key={index} className={`flex items-center mb-2 ml-4 text-m font-bold text-gray-500 px-5 ${!open && "hidden"}`} >
+                                        <item.icon className='mr-2' />
+                                        {item.link}
+                                    </div>
+                                ))}
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }
