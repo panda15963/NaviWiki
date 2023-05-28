@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import axio from 'axios'
-import styles from '../styles/signup.module.scss'
+import styles from '../../styles/signup.module.scss'
 export default function RegisterForm() {
     const [email, setEmail] = useState('')
     const [first_name, setFirst_name] = useState('')

@@ -1,0 +1,81 @@
+.login_dark {
+  background-size: cover;
+  position: relative;
+  height: 695px;
+}
+
+.login_dark form {
+  max-width: 300px;
+  width: 100%;
+  background-image: url("../img/login_background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+}
+
+.login_dark form .form_control {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #434a52;
+  border-radius: 0;
+  font: inherit;
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+  padding-bottom: 5px;
+}
+
+.login_dark form .btn_primary {
+  background: #214a80;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none;
+  text-transform: uppercase;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+}
+
+.login_dark form .btn_primary:hover,
+.login_dark form .btn_primary:active {
+  background: #214a80;
+  outline: none;
+}
+
+.login_dark form .new_account {
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.login_dark form .new_account:hover,
+.login_dark form .new_account:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.login_dark form .btn_primary:active {
+  transform: translateY(1px);
+}
+
+.sr_only {
+  text-align: center;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}

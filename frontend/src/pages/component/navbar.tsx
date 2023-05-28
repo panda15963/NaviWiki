@@ -27,9 +27,9 @@ export function Navbar() {
             name: "General",
             items: [
                 { icon: BsFillHouseFill, link: <Link href="/">Home</Link> },
-                { icon: FiLogIn, link: <Link href="/login">Login</Link> },
-                { icon: VscSignIn, link: <Link href="/register">Register</Link> },
-                { icon: BsDownload, link: <Link href="/download">Download</Link> },
+                { icon: FiLogIn, link: <Link href="/component/login">Login</Link> },
+                { icon: VscSignIn, link: <Link href="/component/register">Register</Link> },
+                { icon: BsDownload, link: <Link href="/component/download">Download</Link> },
             ]
         },
         {
