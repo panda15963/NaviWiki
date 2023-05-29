@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Tailwind Sidebar + Navbar Tutorial</title>
+        <title>ModiM Wiki</title>
         <link rel="icon" href="/favicon.ico" />\
       </Head>
       <Navbar />
