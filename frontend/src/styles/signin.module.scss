@@ -1,24 +1,18 @@
-.login_dark {
-  background-size: cover;
-  position: relative;
-  height: 695px;
-}
-
 .login_dark form {
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
-  background-image: url("../img/login_background.jpeg");
+  background-image: url("../../public/img/login_background.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  margin: 0 auto;
+  background-repeat: no-repeat;
   border-radius: 4px;
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 40px;
+  padding: 50px;
 }
 
 .login_dark form .form_control {
@@ -31,6 +25,7 @@
   display: block;
   margin: 20px 0;
   padding-bottom: 5px;
+  font-weight: bolder;
 }
 
 .login_dark form .btn_primary {
@@ -78,4 +73,18 @@
   color: #6f7a85;
   opacity: 0.9;
   text-decoration: none;
+  font-weight: bolder;
+  font-size:x-large;
+}
+
+.password_requirement {
+  border: 2px solid #6f7a85;
+  display: block;
+  color: #6f7a85;
+  padding: 10px;
+}
+
+.password_requirement b {
+  text-align: center;
+  display: block;
 }

@@ -1,4 +1,11 @@
-.login_dark form {
+.register{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+}
+.register form {
   max-width: 500px;
   width: 100%;
   background-image: url("../../public/img/login_background.jpeg");
@@ -15,7 +22,7 @@
   padding: 50px;
 }
 
-.login_dark form .form_control {
+.register form .form_control {
   background: none;
   border: none;
   border-bottom: 1px solid #434a52;
@@ -28,7 +35,7 @@
   font-weight: bolder;
 }
 
-.login_dark form .btn_primary {
+.register form .btn_primary {
   background: #214a80;
   border: none;
   border-radius: 5px;
@@ -43,13 +50,13 @@
   color: rgb(255, 255, 255);
 }
 
-.login_dark form .btn_primary:hover,
-.login_dark form .btn_primary:active {
+.register form .btn_primary:hover,
+.register form .btn_primary:active {
   background: #214a80;
   outline: none;
 }
 
-.login_dark form .new_account {
+.register form .new_account {
   display: block;
   text-align: center;
   font-size: 15px;
@@ -58,13 +65,13 @@
   text-decoration: none;
 }
 
-.login_dark form .new_account:hover,
-.login_dark form .new_account:active {
+.register form .new_account:hover,
+.register form .new_account:active {
   opacity: 1;
   text-decoration: none;
 }
 
-.login_dark form .btn_primary:active {
+.register form .btn_primary:active {
   transform: translateY(1px);
 }
 

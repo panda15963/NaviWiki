@@ -71,7 +71,7 @@ export default function RegisterForm() {
         <div className='flex'>
             <Navbar />
             <div className='flex-grow'>
-                <div className={styles.login_dark}>
+                <div className={styles.register}>
                     <form method='post' onSubmit={handleSubmit}>
                         <h2 className={styles.sr_only}>Sign Up Form</h2>
                         <div>
