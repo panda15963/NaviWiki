@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Link from "next/link";
-import { BsArrowLeftShort, BsWikipedia, BsDownload, BsFillHouseFill, BsListUl } from "react-icons/bs";
+import { BsWikipedia, BsDownload, BsFillHouseFill, BsListUl } from "react-icons/bs";
+import { AiFillCaretLeft } from "react-icons/ai";
 import { BiNavigation } from "react-icons/bi";
 import { RiNavigationLine } from "react-icons/ri";
 import { FiNavigation2, FiLogIn } from "react-icons/fi";
 import { TbNavigation } from "react-icons/tb";
 import { VscSignIn } from "react-icons/vsc";
+import { RiGuideFill } from "react-icons/ri";
 export function Navbar() {
     const logoFont = {
         FontFace: {
@@ -30,6 +32,7 @@ export function Navbar() {
                 { icon: FiLogIn, link: <Link href="/component/login">Login</Link> },
                 { icon: VscSignIn, link: <Link href="/component/register">Register</Link> },
                 { icon: BsDownload, link: <Link href="/component/download">Download</Link> },
+                { icon: RiGuideFill, link: <Link href="/component/manualguide">Manual Guide</Link> },
             ]
         },
         {
@@ -53,7 +56,7 @@ export function Navbar() {
         <>
             <div className="flex">
                 <div className={`bg-gray-800 h-screen p-5 pt-5 ${open ? "w-72" : "w-20 "} relative duration`}>
-                    <BsArrowLeftShort className={`bg-white text-gray text-2xl rounded-full absolute -right-3 top-9 border border-gray cursor-pointer ${!open && "rotate-180"}`} onClick={toggleMenu.open} />
+                    <AiFillCaretLeft className={`text-cyan-400 text-4xl absolute -right-3 top-9 cursor-pointer ${!open && "rotate-180"}`} onClick={toggleMenu.open} />
                     <BsWikipedia className="text-4xl cursor-pointer block float-left mr-2" />
                     <h1 className={`text-white origin-left font-medium text-2xl ${!open && "hidden"}`} style={logoFont.FontFace}>
                         <Link href="/">ModiM Wiki</Link>

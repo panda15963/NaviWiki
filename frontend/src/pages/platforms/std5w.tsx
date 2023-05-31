@@ -1,4 +1,4 @@
-export function STD5W(){
+export default function STD5W(){
     return(
         <>
         </>

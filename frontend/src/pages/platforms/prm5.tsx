@@ -1,4 +1,4 @@
-export function PRM5(){
+export default function PRM5(){
     return(
         <>
         </>

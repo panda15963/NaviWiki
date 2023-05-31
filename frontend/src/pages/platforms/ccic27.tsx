@@ -1,4 +1,4 @@
-export function CCIC27(){
+export default function CCIC27(){
     return(
         <>        
         </>

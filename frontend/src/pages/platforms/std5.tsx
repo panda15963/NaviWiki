@@ -1,4 +1,4 @@
-export function STD5(){
+export default function STD5(){
     return(
         <>
         </>

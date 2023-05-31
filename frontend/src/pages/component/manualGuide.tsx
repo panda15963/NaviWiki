@@ -1,4 +1,4 @@
-export default function CCIC(){
+export default function ManualGuide(){
     return(
         <>
         </>
