@@ -1,5 +1,5 @@
 # NaviWiki
-## 공통 부분
+ 공통 부분
 ### 준비물 : Django, Nodejs, Npm, VSCode, Git Bash
 ### 1. 준비물에 적혀있는 4가지를 먼저 설치
 ### 2. Git Bash를 설치를 하고 자기가 원하는 폴더에 진입
