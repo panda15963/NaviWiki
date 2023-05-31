@@ -9,4 +9,4 @@
 #### 1. NaviWiki/frontend 폴더에 진입
 #### 2. npm install 명령어 실행
 ### backend 실행 시키는 법
-#### 프로젝트만 생성시킴
+#### 1. 프로젝트만 생성시킴
