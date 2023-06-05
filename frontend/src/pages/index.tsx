@@ -2,6 +2,74 @@ import { Navbar } from "./component/navbar";
 import { BsWikipedia } from "react-icons/bs";
 import styles from "../styles/index.module.scss";
 export default function Home() {
+  type MainMenu = {
+    name?: string;
+    items?: {
+      maintitle?: string;
+      subtitle?: string;
+      link?: any;
+    }[];
+  };
+  const data: MainMenu[] = [
+    {
+      name: "General",
+      items: [
+        { maintitle: "Login", subtitle: "Sign in page", link: "/component/login" },
+        { maintitle: "Register", subtitle: "Sign up page", link: "/component/register" },
+        {
+          maintitle: "Download",
+          subtitle: "Download and install a program for platform",
+          link: "/component/download",
+        },
+        {
+          maintitle: "Manual Guide",
+          subtitle:
+            "Descriptions page about the program. More details are in this page",
+          link: "/component/manualguide",
+        },
+      ],
+    },
+    {
+      name: "Platforms",
+      items: [
+        {
+          maintitle: "STD5",
+          subtitle: "Guide about STD5",
+          link: "/platforms/std5",
+        },
+        {
+          maintitle: "STD5W",
+          subtitle: "Guide about STD5W",
+          link: "/platforms/std5w",
+        },
+        {
+          maintitle: "PRM5",
+          subtitle: "Guide about PRM5",
+          link: "/platforms/prm5",
+        },
+        {
+          maintitle: "PRM6",
+          subtitle: "Guide about PRM6",
+          link: "/platforms/prm6",
+        },
+        {
+          maintitle: "ccIC",
+          subtitle: "Guide about ccIC",
+          link: "/platforms/ccic",
+        },
+        {
+          maintitle: "ccIC27",
+          subtitle: "Guide about ccIC27",
+          link: "/platforms/ccic27",
+        },
+        {
+          maintitle: "ccNC",
+          subtitle: "Guide about ccNC",
+          link: "/platforms/ccnc",
+        },
+      ],
+    },
+  ];
   return (
     <div className="flex">
       <Navbar />
@@ -13,97 +81,29 @@ export default function Home() {
                 ModiM Wiki
               </BsWikipedia>
               <div className="space-y-10 text-white">
-                <div className="space-y-5">
-                  <div className="text-m font-semibold uppercase tracking-wider text-gray-400">
-                    General
+                {data.map((item, index) => (
+                  <div key={index}>
+                    <div className="text-2xl font-semibold uppercase tracking-wider text-gray-400">
+                      {item.name}
+                    </div>
+                    <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+                      {item.items?.map((item, index) => (
+                        <a
+                          key={index}
+                          className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
+                          href={item.link}
+                        >
+                          <div className="font-medium text-gray-200 group-hover:text-gray-50">
+                            {item.maintitle}
+                          </div>
+                          <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
+                            {item.subtitle}
+                          </div>
+                        </a>
+                      ))}
+                    </div>
                   </div>
-                  <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/streaming"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        Login
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Sign in page
-                      </div>
-                    </a>
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/ssg"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        Register
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Sign up page
-                      </div>
-                    </a>
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/ssr"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        DownLoad
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Download and install a program for platform
-                      </div>
-                    </a>
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/isr"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        Manual Guide
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Descriptions page about the program. More details are in this page
-                      </div>
-                    </a>
-                  </div>
-                </div>                
-                <div className="space-y-5">
-                  <div className="text-m font-semibold uppercase tracking-wider text-gray-400">
-                    Misc
-                  </div>
-                  <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/hooks"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        Client Component Hooks
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Preview the routing hooks available in Client Components
-                      </div>
-                    </a>
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/styling"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        CSS and CSS-in-JS
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        Preview the supported styling solutions
-                      </div>
-                    </a>
-                    <a
-                      className="group block space-y-1.5 rounded-lg bg-gray-900 px-5 py-3 hover:bg-gray-800"
-                      href="/snippets"
-                    >
-                      <div className="font-medium text-gray-200 group-hover:text-gray-50">
-                        Code Snippets
-                      </div>
-                      <div className="text-sm text-gray-400 line-clamp-3 group-hover:text-gray-300">
-                        A collection of useful App Router code snippets
-                      </div>
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

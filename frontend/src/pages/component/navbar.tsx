@@ -16,7 +16,7 @@ export function Navbar() {
             src: "url(/fonts/Playfair_Italic_VariableFont) format(truetype)",
         }
     }
-    type Menus = {
+    type SideMenus = {
         name?: string,
         items?: {
             icon?: any,
@@ -24,7 +24,7 @@ export function Navbar() {
             link?: any
         }[]
     }
-    const data: Menus[] = [
+    const data: SideMenus[] = [
         {
             name: "General",
             items: [
