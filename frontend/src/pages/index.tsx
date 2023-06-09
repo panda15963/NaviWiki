@@ -1,6 +1,7 @@
 import { Navbar } from "./component/navbar";
 import { BsWikipedia } from "react-icons/bs";
 import styles from "../styles/index.module.scss";
+import Footer from "./component/footer";
 export default function Home() {
   type MainMenu = {
     name?: string;
@@ -71,15 +72,17 @@ export default function Home() {
     },
   ];
   return (
-    <div className="flex">
-      <Navbar />
-      <div className="flex-1">
+    <div className="wrapper">
+      <div className="flex">
+        <Navbar />
         <div className={styles.main_style}>
           <div className="rounded-lg bg-black p-6">
             <div className="space-y-8">
-              <BsWikipedia className="text-7xl  text-gray-300 text-center">
-                ModiM Wiki
-              </BsWikipedia>
+              <div className={styles.main_title}>
+                <h1 className="text-white text-4xl">
+                  ModiM Wiki
+                </h1>
+              </div>
               <div className="space-y-10 text-white">
                 {data.map((item, index) => (
                   <div key={index}>
@@ -109,6 +112,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import axio from "axios";
 import { Navbar } from "../component/navbar";
 import styles from "../../styles/signup.module.scss";
+import Footer from "./footer";
 export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [first_name, setFirst_name] = useState("");
@@ -76,101 +77,92 @@ export default function RegisterForm() {
     value?: any;
     onChange?: any;
   }
-    const data: inputs[] = [
-        {
-            className: styles.form_control,
-            types: "email",
-            name: "email",
-            placeholder: "Email",
-            value: email,
-            onChange: handleChange,
-        },
-        {
-            className: styles.form_control,
-            types: "text",
-            name: "username",
-            placeholder: "User Name",
-            value: username,
-            onChange: handleChange,
-        },
-        {
-            className: styles.form_control,
-            types: "text",
-            name: "first_name",
-            placeholder: "First Name",
-            value: first_name,
-            onChange: handleChange,
-        },
-        {
-            className: styles.form_control,
-            types: "text",
-            name: "last_name",
-            placeholder: "Last Name",
-            value: last_name,
-            onChange: handleChange,
-        },
-        {
-            className: styles.form_control,
-            types: "password",
-            name: "password",
-            placeholder: "Password",
-            value: password,
-            onChange: handleChange,
-        },
-        {
-            className: styles.form_control,
-            types: "password",
-            name: "password2",
-            placeholder: "Comfirm Password",
-            value: password2,
-            onChange: handleChange,
-        },
-        {
-            className: styles.btn_primary,
-            types: "submit",
-            name: "register",
-            value: "Sign Up",
-        },
-    ];
+  const data: inputs[] = [
+    {
+      className: styles.form_control,
+      types: "email",
+      name: "email",
+      placeholder: "Email",
+      value: email,
+      onChange: handleChange,
+    },
+    {
+      className: styles.form_control,
+      types: "text",
+      name: "username",
+      placeholder: "User Name",
+      value: username,
+      onChange: handleChange,
+    },
+    {
+      className: styles.form_control,
+      types: "text",
+      name: "first_name",
+      placeholder: "First Name",
+      value: first_name,
+      onChange: handleChange,
+    },
+    {
+      className: styles.form_control,
+      types: "text",
+      name: "last_name",
+      placeholder: "Last Name",
+      value: last_name,
+      onChange: handleChange,
+    },
+    {
+      className: styles.form_control,
+      types: "password",
+      name: "password",
+      placeholder: "Password",
+      value: password,
+      onChange: handleChange,
+    },
+    {
+      className: styles.form_control,
+      types: "password",
+      name: "password2",
+      placeholder: "Comfirm Password",
+      value: password2,
+      onChange: handleChange,
+    },
+    {
+      className: styles.btn_primary,
+      types: "submit",
+      name: "register",
+      value: "Sign Up",
+    },
+  ];
   return (
-    <div className="flex">
-      <Navbar />
-      <div className="flex-grow">
-        <div className={styles.register}>
-          <form method="post" onSubmit={handleSubmit}>
-            <h2 className={styles.sr_only}>Sign Up Form</h2>
-            <div className={styles.password_requirement}>
-              <b>Password Requirements</b>
-              <br />
-              <ul>
-                <li>More 8 characters</li>
-                <li>Less than 15 characters</li>
-                <li>More one uppercase letter</li>
-                <li>More one lowercase letter</li>
-                <li>More one number</li>
-                <li>More one special character</li>
-              </ul>
-            </div>
-            <div>
+    <div className="wrapper">
+      <div className="flex">
+        <Navbar />
+        <div className="flex-grow">
+          <div className={styles.register}>
+            <form method="post" onSubmit={handleSubmit}>
+              <h2 className={styles.sr_only}>Sign Up Form</h2>              
+              <div>
                 {data.map((group, index) => (
-                    <div key={index}>
-                        <input
-                            className={group.className}
-                            type={group.types}
-                            name={group.name}
-                            placeholder={group.placeholder}
-                            value={group.value}
-                            onChange={group.onChange}
-                        />
-                    </div>
+                  <div key={index}>
+                    <input
+                      className={group.className}
+                      type={group.types}
+                      name={group.name}
+                      placeholder={group.placeholder}
+                      value={group.value}
+                      onChange={group.onChange}
+                    />
+                  </div>
                 ))}
-            </div>
-            <Link className={styles.new_account} href="/component/login">
-              Do you have an account?
-            </Link>
-          </form>
+              </div>
+              <Link className={styles.new_account} href="/component/login">
+                Do you have an account?
+              </Link>
+            </form>
+          </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

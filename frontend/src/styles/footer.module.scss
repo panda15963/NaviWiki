@@ -1,24 +1,24 @@
 .footer{
-    border-top: 1px solid #e4e4e4;
-    background-color:#f8f9fa;
     padding:1rem 0;
-    margin:1rem 0;
+    text-align: center;
+    background-color: rgb(20, 115, 255);
 }
-
-.footer-message{
+.footer_message{
     font-weight: bold;
     font-size:0.9rem;
-    color:#545e6f;
+    color:#121720;
     margin-bottom:0.3rem;
     margin:0 0 0 0.6rem;
 }
-.footer-contact{
+.footer_contact{
+    font-weight: bold;
     font-size:0.9rem;
-    color:#545e6f;
+    color:#121720;
     margin:0.6rem;
 }
-.footer-copyright{
+.footer_copyright{
+    font-weight: bold;
     font-size:0.9rem;
-    color:#545e6f;
+    color:#121720;
     margin:0.6rem;
 }

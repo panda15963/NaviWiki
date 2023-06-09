@@ -1,4 +1,5 @@
 import styles from "../../styles/signin.module.scss";
+import Footer from "./footer";
 import axio from "axios";
 import { Navbar } from "../component/navbar";
 import Link from "next/link";
@@ -14,6 +15,7 @@ export default function LoginForm() {
     {className: styles.form_control, types: "password", name: "password", placeholder: "Password"},
   ]
   return (
+    <div className="wrapper">    
     <div className="flex">
       <Navbar />
       <div className={styles.login_dark}>
@@ -37,6 +39,8 @@ export default function LoginForm() {
           </Link>
         </form>
       </div>
+    </div>
+    <Footer />
     </div>
   );
 }

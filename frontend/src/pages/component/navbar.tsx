@@ -38,13 +38,13 @@ export function Navbar() {
         {
             name: "Platforms",
             items: [
-                { icon: BiNavigation, link: <Link href="/platform/std5">STD5</Link> },
-                { icon: BiNavigation, link: <Link href="/platform/std5w">STD5W</Link> },
-                { icon: RiNavigationLine, link: <Link href="/platform/prm5">PRM5</Link> },
-                { icon: RiNavigationLine, link: <Link href="/platform/prm6">PRM6</Link> },
-                { icon: FiNavigation2, link: <Link href="/platform/ccic">CCIC</Link> },
-                { icon: FiNavigation2, link: <Link href="/platform/ccic27">CCIC27</Link> },
-                { icon: TbNavigation, link: <Link href="/platform/ccnc">ccNC</Link> },
+                { icon: BiNavigation, link: <Link href="/platforms/std5">STD5</Link> },
+                { icon: BiNavigation, link: <Link href="/platforms/std5w">STD5W</Link> },
+                { icon: RiNavigationLine, link: <Link href="/platforms/prm5">PRM5</Link> },
+                { icon: RiNavigationLine, link: <Link href="/platforms/prm6">PRM6</Link> },
+                { icon: FiNavigation2, link: <Link href="/platforms/ccic">CCIC</Link> },
+                { icon: FiNavigation2, link: <Link href="/platforms/ccic27">CCIC27</Link> },
+                { icon: TbNavigation, link: <Link href="/platforms/ccnc">ccNC</Link> },
             ]
         },
     ]
