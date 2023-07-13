@@ -26,7 +26,7 @@ export default function Home() {
           maintitle: "Manual Guide",
           subtitle:
             "Descriptions page about the program. More details are in this page",
-          link: "/component/manualguide",
+          link: "/component/manualGuide",
         },
       ],
     },

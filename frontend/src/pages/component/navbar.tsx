@@ -32,7 +32,7 @@ export function Navbar() {
                 { icon: FiLogIn, link: <Link href="/component/login">Login</Link> },
                 { icon: VscSignIn, link: <Link href="/component/register">Register</Link> },
                 { icon: BsDownload, link: <Link href="/component/download">Download</Link> },
-                { icon: RiGuideFill, link: <Link href="/component/manualguide">Manual Guide</Link> },
+                { icon: RiGuideFill, link: <Link href="/component/manualGuide">Manual Guide</Link> },
             ]
         },
         {
